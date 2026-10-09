@@ -1,0 +1,19 @@
+// Who signs your build of the app. Leave this file as it is: copy Signing.local.example.xcconfig
+// to Signing.local.xcconfig (gitignored) and put your own team and bundle ID prefix there.
+// The simulator needs neither; a build for a device needs both.
+DEVELOPMENT_TEAM =
+SUNNIE_BUNDLE_ID_PREFIX = com.example
+// The app's bundle ID; the share extension is `<this>.Share` and the Keychain group `<team>.<this>`.
+// Default: `<prefix>.Sunnie`. The App Store build sets its own (see scripts/testflight.sh).
+SUNNIE_BUNDLE_ID = $(SUNNIE_BUNDLE_ID_PREFIX).Sunnie
+
+// Which app to build (App/AppFlavor.swift). `selfhosted`: connect with a server address and API
+// key, every server setting shown. `hosted`: the App Store app for the hosted service; people sign
+// in with the code from its panel, scanned or typed, and see no models, servers or server details.
+// SUNNIE_CONNECT_HOST is the panel's host name (no scheme: `//` starts a comment here); a typed
+// code is claimed at https://<host>/c/<code>. Set both in Signing.local.xcconfig, or per build:
+// xcodebuild archive -scheme Sunnie SUNNIE_FLAVOR=hosted SUNNIE_CONNECT_HOST=panel.example.com
+SUNNIE_FLAVOR = selfhosted
+SUNNIE_CONNECT_HOST =
+
+#include? "Signing.local.xcconfig"

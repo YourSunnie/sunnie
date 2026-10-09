@@ -1,0 +1,21 @@
+services:
+  sunnie:
+    build: .
+    restart: unless-stopped
+    # An init process reaps what the agent's commands leave behind (the browser daemon, its
+    # virtual screen); without it they pile up as zombies under the server.
+    init: true
+    env_file: .env
+    ports:
+      # Bound to localhost on purpose: put a TLS-terminating reverse proxy (Caddy, Tailscale
+      # Serve, Cloudflare Tunnel) in front before exposing Sunnie to your phone.
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - sunnie-data:/var/lib/sunnie
+      - sunnie-home:/home/sunnie
+      # Optional: provider/model settings. See sunnie.config.example.json.
+      # - ./sunnie.config.json:/var/lib/sunnie/config.json:ro
+
+volumes:
+  sunnie-data:
+  sunnie-home:

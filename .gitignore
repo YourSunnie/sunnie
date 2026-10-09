@@ -1,0 +1,12 @@
+.DS_Store
+xcuserdata/
+*.xcuserstate
+app/**/DerivedData/
+
+# Merchandise artwork: not part of the open-source project.
+merch/
+# Your own Apple team and bundle ID prefix (see app/Sunnie/Signing.xcconfig).
+app/Sunnie/Signing.local.xcconfig
+# Archives and exports of scripts/testflight.sh.
+app/Sunnie/build/
+app/Sunnie/scripts/testflight.local.env

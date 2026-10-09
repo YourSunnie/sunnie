@@ -1,0 +1,38 @@
+{
+  "name": "sunnie",
+  "version": "0.1.0",
+  "private": true,
+  "license": "FSL-1.1-ALv2",
+  "description": "A self-hosted, model-agnostic personal agent with its own computer and long-term memory.",
+  "type": "module",
+  "packageManager": "pnpm@11.5.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch src/index.ts",
+    "start": "node --env-file-if-exists=.env src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "check": "pnpm typecheck && pnpm test"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.68",
+    "@ai-sdk/deepseek": "^3.0.56",
+    "@ai-sdk/google": "^4.0.85",
+    "@ai-sdk/openai": "^4.0.81",
+    "@ai-sdk/openai-compatible": "^3.0.59",
+    "@ai-sdk/xai": "^5.0.12",
+    "@hono/node-server": "^2.1.3",
+    "@openrouter/ai-sdk-provider": "^3.1.0",
+    "ai": "^7.0.122",
+    "hono": "^4.13.11",
+    "playwright-core": "^1.63.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "typescript": "^7.0.2"
+  }
+}

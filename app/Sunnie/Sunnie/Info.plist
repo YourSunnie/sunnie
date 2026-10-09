@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SunnieFlavor</key>
+	<string>$(SUNNIE_FLAVOR)</string>
+	<key>SunnieConnectHost</key>
+	<string>$(SUNNIE_CONNECT_HOST)</string>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.yoursunnie.Sunnie.phone-refresh</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Sunnie connects to your Sunnie server when it runs on your home network or a private network like Tailscale.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>connect</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>sunnie</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Sunnie uses the camera to scan the code that connects it to your Sunnie server, and to take a photo to send in a message when you ask for one.</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>LaunchLogo</string>
+	</dict>
+</dict>
+</plist>

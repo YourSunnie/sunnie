@@ -1,0 +1,9 @@
+// Copy this file to Signing.local.xcconfig (gitignored) and fill in your own values.
+// Team ID: Xcode → Settings → Accounts, or developer.apple.com → Account → Membership details.
+// The prefix is reverse DNS you control; the bundle IDs become <prefix>.Sunnie and <prefix>.Sunnie.Share.
+DEVELOPMENT_TEAM = ABCDE12345
+SUNNIE_BUNDLE_ID_PREFIX = com.yourname
+
+// The App Store app for the hosted service (see Signing.xcconfig); leave out for a self-hosted build.
+// SUNNIE_FLAVOR = hosted
+// SUNNIE_CONNECT_HOST = panel.example.com
